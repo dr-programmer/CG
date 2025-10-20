@@ -9,7 +9,7 @@ def histogram_equalization(image_path, method=1):
     
     Args:
         image_path: Път към входното изображение
-        method: Метод за изравняване (1, 2 или 3)
+        method: Метод за изравняване (1, 2)
     
     Returns:
         Обработеното изображение като numpy array
@@ -76,11 +76,7 @@ def histogram_equalization(image_path, method=1):
     for p in range(Po, Pmax + 1):
         original_value = pixels.flat[p]
         
-        if method in [1, 2]:
-            result_pixels.flat[p] = Cn[original_value]
-        elif method == 3:
-            # Метод 3: Използване на средната стойност
-            result_pixels.flat[p] = Cn[original_value]
+        result_pixels.flat[p] = Cn[original_value]
     
     return result_pixels, H
 
