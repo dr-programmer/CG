@@ -77,7 +77,7 @@ def histogram_equalization(image_path, method=1):
         
         result_pixels.flat[p] = Cn[original_value]
     
-    return result_pixels, H
+    return result_pixels
 
 def main():
     """
@@ -98,7 +98,7 @@ def main():
     
     # Прилагане на алгоритъма
     method = 1  # Използваме метод 1
-    processed_img, histogram_processed = histogram_equalization('test_input.png', method)
+    processed_img = histogram_equalization('test_input.png', method)
     
     # Запазване на резултата
     Image.fromarray(processed_img).save('test_output.png')
